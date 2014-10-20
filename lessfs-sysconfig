@@ -1,0 +1,3 @@
+MKLESSFS=/usr/local/sbin/mklessfs
+MOUNTPOINT=/mnt/zalohy-less
+CFG=/etc/lessfs.cfg

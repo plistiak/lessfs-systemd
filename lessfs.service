@@ -1,0 +1,14 @@
+[Unit]
+Description=A high performance inline data deduplicating filesystem for Linux.
+After=fuse.target
+
+[Service]
+Type=forking
+EnvironmentFile=/etc/sysconfig/lessfs
+ExecStart=/usr/local/bin/lessfs $CFG $MOUNTPOINT
+ExecStop=/bin/umount $MOUNTPOINT
+KillMode=none
+ExecStopPost=/bin/sleep 3
+
+[Install]
+WantedBy=multi-user.target
